@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { React,useState, createContext } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router,Routes, Route, Link,useLocation,useNavigate } from 'react-router-dom';
+import MyShifts from "./components/myShifts‏";
+import OpenRequestsForExchange from "./components/openRequestsForExchange‏";
+import AllChanges from "./components/allChanges‏";
+import MenuBar from "./components/menuBar";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ 
+ return ( 
+ <>
+ <MenuBar></MenuBar>
+        <Routes>
+          <Route path='/' element={<MyShifts  />}></Route>
+          <Route path='/openRequests' element={<OpenRequestsForExchange  />}></Route> 
+        <Route path='/allChanges' element={<AllChanges  />}></Route>
+
+        </Routes>
+</>
+ );
 }
 
 export default App;
